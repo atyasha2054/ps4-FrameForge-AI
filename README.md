@@ -99,37 +99,29 @@ Q -->|NO| S[Regeneration / Rejection]
 
 S --> H
 ```
+# 🧰 Technology Stack
 
-## Local setup
+FrameForge AI is built using a lightweight Python-based computer vision and media-processing stack.
 
-Use Python 3.11.9 locally.
-
-```bash
-python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-# macOS/Linux
-# source .venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-Install FFmpeg and make sure `ffmpeg -version` works in a terminal.
-
-Run:
-
-```bash
-python app.py
-```
-
-Open `http://localhost:7860`.
-
-### Provided challenge assets
-
-- `demo/input_image.png` — supplied master image.
-- `demo/input_video_sample.mp4` — 20-second demo clip extracted from the supplied 190-second source video so the public demo remains lightweight.
-
-For the complete source video, select the original file from your local machine in the Video upload component.
+| Category | Technology | Purpose |
+|---|---|---|
+| **Programming Language** | 🐍 Python 3.11 | Core application and processing logic |
+| **Web UI** | 🎨 Gradio | Interactive web interface for image/video processing |
+| **Computer Vision** | 👁️ OpenCV | Image processing, video processing, face detection, tracking and frame analysis |
+| **Face Detection** | 🎯 YuNet | Lightweight face detection for subject-aware cropping |
+| **Fallback Detection** | 🔍 OpenCV Haar Cascade | Fallback face detection when YuNet is unavailable |
+| **Image Processing** | 🖼️ OpenCV | Resizing, cropping, frame processing and image generation |
+| **Video Processing** | 🎥 OpenCV + FFmpeg | Video decoding, frame extraction, reframing and rendering |
+| **Audio Analysis** | 🔊 Lightweight Audio Activity Analysis | Speech/activity signal used for active-speaker estimation |
+| **Speaker Analysis** | 🗣️ Mouth Motion + Audio Activity | Lightweight active-speaker heuristic |
+| **Temporal Processing** | ⏱️ Custom Python Logic | Face tracking, speaker transitions and crop smoothing |
+| **Validation** | ✅ Custom Python Validator | Dimension, aspect-ratio, format and integrity validation |
+| **Configuration** | 📋 JSON | Platform specifications and validation rules |
+| **Frontend Styling** | 🎨 HTML + CSS | Custom Gradio interface styling |
+| **Version Control** | 🌿 Git | Source-code version control |
+| **Repository** | 🐙 GitHub | Public source-code hosting |
+| **Deployment** | ☁️ Hugging Face Spaces | Public application hosting |
+| **Application Runtime** | ⚡ Gradio Spaces / ZeroGPU-compatible Runtime | Cloud execution environment |
 
 ## Architecture
 
@@ -186,3 +178,35 @@ YuNet is an OpenCV Zoo lightweight face detector; the application downloads its 
 ## Important MVP scope note
 
 The active-speaker module is intentionally lightweight. It does not claim biometric speaker identification. It uses temporal mouth motion, audio activity, face tracking, and face confidence to choose the active visual speaker. This is enough to demonstrate the PS4 mechanism without adding a large speaker-embedding/ASR stack.
+
+## Local setup
+
+Use Python 3.11.9 locally.
+
+```bash
+python -m venv .venv
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+# macOS/Linux
+# source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Install FFmpeg and make sure `ffmpeg -version` works in a terminal.
+
+Run:
+
+```bash
+python app.py
+```
+
+Open `http://localhost:7860`.
+
+### Provided challenge assets
+
+- `demo/input_image.png` — supplied master image.
+- `demo/input_video_sample.mp4` — 20-second demo clip extracted from the supplied 190-second source video so the public demo remains lightweight.
+
+For the complete source video, select the original file from your local machine in the Video upload component.
+
