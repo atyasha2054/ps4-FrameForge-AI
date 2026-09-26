@@ -2,6 +2,16 @@
 
 ### Intelligent Media Reformatting & Reframing Engine
 
+---
+
+## 🚀 Live Demo
+
+### [▶ Launch FRAMEFORGE AI](https://atyasha-frameforge-ai.hf.space)
+
+Experience the deployed application directly through the live Hugging Face Space.
+
+---
+
 **PS4 — Creative Reformatting Engine**
 
 # 🧠 Overview
@@ -51,16 +61,6 @@ That creates several problems:
 - Assets may satisfy dimensions while still violating quality requirements.
 
 FrameForge AI addresses these problems through **content-aware reframing and validation**.
-
----
-
-## 🚀 Live Demo
-
-### [▶ Launch FRAMEFORGE AI](https://atyasha-frameforge-ai.hf.space)
-
-Experience the deployed application directly through the live Hugging Face Space.
-
----
 
 # 💡 Solution
 
