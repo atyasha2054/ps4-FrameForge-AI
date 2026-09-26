@@ -1,31 +1,104 @@
+# 🎬 FrameForge AI
+
+### Intelligent Media Reformatting & Reframing Engine
+
+**PS4 — Creative Reformatting Engine**
+
+# 🧠 Overview
+
+**FrameForge AI** is an AI-assisted creative media reformatting engine designed to transform a single master image or video into multiple platform-ready formats.
+
+Instead of performing simple center cropping or fixed vertical conversion, FrameForge analyzes the visual content and uses detected subjects, faces, temporal motion, speech activity, and platform specifications to generate intelligent media variants.
+
+### The system supports:
+
+- 🖼️ Image adaptation
+- 🎯 Subject-aware smart cropping
+- 👥 Multi-face subject grouping
+- 🎥 Video-to-vertical reframing
+- 🗣️ Active-speaker-aware framing
+- 📱 9:16 vertical reel generation
+- 🖼️ Best-still extraction
+- ✅ Machine-readable validation
+- 🔄 Single-variant regeneration
+- 📚 Validated asset library management
+
 ---
-title: FRAMEFORGE AI
-emoji: 🎬
-colorFrom: indigo
-colorTo: purple
-sdk: gradio
-sdk_version: 5.49.1
-python_version: "3.11.9"
-app_file: app.py
+
+# 🎯 Problem Statement
+
+Modern content creators frequently need to transform one piece of master content into multiple platform-specific formats.
+
+A single image or video may need to become:
+
+| Format | Aspect Ratio | Typical Use |
+|---|---:|---|
+| Landscape | `16:9` | YouTube / Web |
+| Square | `1:1` | Social feeds |
+| Portrait | `4:5` | Social feed posts |
+| Vertical | `9:16` | Reels / Shorts / Stories |
+
+A naive solution simply resizes or center-crops the source.
+
+That creates several problems:
+
+- Important subjects can be cropped out.
+- Faces may be partially cut.
+- Multiple people may not fit inside the crop.
+- Vertical videos can remain focused on the wrong person.
+- Speaker changes can make the active speaker disappear.
+- Extracted stills may be blurry or poorly framed.
+- Assets may satisfy dimensions while still violating quality requirements.
+
+FrameForge AI addresses these problems through **content-aware reframing and validation**.
+
 ---
 
-# PS4 — FRAMEFORGE AI(Intelligent Media Reformatting & Reframing Engine)
+## 🚀 Live Demo
 
-A hackathon MVP for subject-aware image adaptation, active-speaker-aware vertical video reframing, still extraction, and machine-readable compliance validation.
+### [▶ Launch FRAMEFORGE AI](https://atyasha-frameforge-ai.hf.space)
 
-## What it demonstrates
+Experience the deployed application directly through the live Hugging Face Space.
 
-- One master image → 16:9, 1:1, 4:5, 9:16
-- Detected faces directly influence crop placement
-- Multi-face subject grouping rather than fixed center crop
-- Video face tracking and time-varying crop position
-- Lightweight active-speaker heuristic using speech energy + mouth-region motion + tracking
-- Smooth crop movement
-- Best-still extraction based on sharpness and face visibility
-- JSON platform specification
-- Explainable validation report
-- Single-variant image regeneration
-- Validated outputs are copied into `library/`; failed assets remain outside the library
+---
+
+# 💡 Solution
+
+FrameForge AI introduces an intelligent media pipeline:
+
+```mermaid
+flowchart TD
+
+A[Master Image / Video] --> B[Content Analysis]
+
+B --> C{Media Type}
+
+C -->|Image| D[Face Detection]
+C -->|Video| E[Frame Sampling]
+
+D --> F[Subject Scoring]
+F --> G[Subject Grouping]
+G --> H[Crop Optimization]
+
+E --> I[Face Detection + Tracking]
+I --> J[Mouth Motion Analysis]
+J --> K[Speech Activity Analysis]
+K --> L[Active Speaker Score]
+L --> M[Dynamic Crop Path]
+
+H --> N[Platform Variants]
+M --> O[9:16 Vertical Reel]
+
+N --> P[Validation Engine]
+O --> P
+
+P --> Q{Validation Passed?}
+
+Q -->|YES| R[Validated Asset Library]
+Q -->|NO| S[Regeneration / Rejection]
+
+S --> H
+```
 
 ## Local setup
 
