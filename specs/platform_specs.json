@@ -1,0 +1,6 @@
+{
+  "16:9": {"width": 1920, "height": 1080, "safe_margin": 0.05, "face_safe_margin": 0.02, "max_file_mb": 25},
+  "1:1":  {"width": 1080, "height": 1080, "safe_margin": 0.05, "face_safe_margin": 0.02, "max_file_mb": 25},
+  "4:5":  {"width": 1080, "height": 1350, "safe_margin": 0.07, "face_safe_margin": 0.02, "max_file_mb": 25},
+  "9:16": {"width": 1080, "height": 1920, "safe_margin": 0.08, "face_safe_margin": 0.02, "max_file_mb": 50}
+}

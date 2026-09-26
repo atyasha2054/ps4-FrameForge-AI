@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.gradio/
+.DS_Store
+outputs/*
+!outputs/.gitkeep
+library/*
+!library/.gitkeep
+assets/*.onnx
