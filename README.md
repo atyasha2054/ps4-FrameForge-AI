@@ -5,7 +5,7 @@ colorFrom: indigo
 colorTo: purple
 sdk: gradio
 sdk_version: 5.49.1
-python_version: "3.10.13"
+python_version: "3.11.9"
 app_file: app.py
 ---
 
@@ -29,7 +29,7 @@ A hackathon MVP for subject-aware image adaptation, active-speaker-aware vertica
 
 ## Local setup
 
-Use Python 3.11 locally.
+Use Python 3.11.9 locally.
 
 ```bash
 python -m venv .venv
