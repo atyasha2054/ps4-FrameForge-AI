@@ -1,5 +1,5 @@
 ---
-title: PS4 Creative Reformatting Engine
+title: FRAMEFORGE AI
 emoji: 🎬
 colorFrom: indigo
 colorTo: purple
@@ -9,7 +9,7 @@ python_version: "3.10.13"
 app_file: app.py
 ---
 
-# PS4 — Creative Reformatting Engine
+# PS4 — FRAMEFORGE AI(Intelligent Media Reformatting & Reframing Engine)
 
 A hackathon MVP for subject-aware image adaptation, active-speaker-aware vertical video reframing, still extraction, and machine-readable compliance validation.
 
